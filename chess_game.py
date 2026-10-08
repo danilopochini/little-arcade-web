@@ -1,5 +1,4 @@
 import math
-import tkinter as tk
 
 import chess
 
@@ -633,6 +632,9 @@ class ChessApp:
 
 
 def main():
+    global tk
+    import tkinter as tk
+
     root = tk.Tk()
     ChessApp(root)
     root.mainloop()

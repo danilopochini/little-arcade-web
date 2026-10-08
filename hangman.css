@@ -1,0 +1,268 @@
+.hangman-game {
+  width: min(100%, 820px);
+}
+
+.hangman-brand {
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #337a8e;
+  box-shadow: 0 2px 4px rgb(30 42 58 / 16%);
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  font-weight: 750;
+}
+
+.hangman-game .status-bar[data-state="success"] .status-indicator {
+  background: #38856d;
+}
+
+.hangman-game .status-bar[data-state="error"] .status-indicator {
+  background: #c6534b;
+}
+
+.hangman-game .status-bar[data-state="muted"] .status-indicator {
+  background: #8f5e3d;
+}
+
+.hangman-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(0.7rem, 2vw, 1.2rem);
+  margin-top: 0.9rem;
+}
+
+.hangman-drawing-panel,
+.word-panel,
+.guess-panel,
+.guess-form {
+  border: 1px solid #eee7db;
+  border-radius: 0.75rem;
+  background: #faf6ef;
+}
+
+.hangman-drawing-panel {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.hangman-drawing {
+  display: block;
+  width: min(100%, 320px);
+  max-height: 340px;
+}
+
+.gallows {
+  fill: none;
+  stroke: #8f5e3d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
+}
+
+.hangman-person {
+  fill: none;
+  stroke: #302820;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.person-part {
+  visibility: hidden;
+}
+
+.person-part.is-visible {
+  visibility: visible;
+}
+
+.face-part {
+  fill: #302820;
+  stroke-width: 3;
+}
+
+.mistakes-count {
+  margin: 0.1rem 0 0.3rem;
+  color: #817c74;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.hangman-controls {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.word-panel,
+.guess-panel,
+.guess-form {
+  padding: 0.75rem;
+}
+
+.panel-label {
+  display: block;
+  margin: 0;
+  color: #817c74;
+  font-size: 0.69rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.word-display {
+  min-height: 2.5rem;
+  margin: 0.4rem 0 0;
+  overflow-wrap: anywhere;
+  color: #302820;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: clamp(1.1rem, 3.5vw, 1.55rem);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  line-height: 1.55;
+}
+
+.letter-keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.28rem;
+  margin-top: 0.55rem;
+}
+
+.letter-key {
+  display: grid;
+  min-width: 0;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #e4ddd1;
+  border-radius: 0.4rem;
+  background: #fffdf9;
+  color: #34445a;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 750;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.letter-key:not(:disabled):hover {
+  transform: translateY(-1px);
+  background: #edf3f4;
+}
+
+.letter-key:disabled {
+  border-color: transparent;
+  background: #e8e2d8;
+  color: #aaa196;
+  cursor: default;
+}
+
+.letter-key.is-correct:disabled {
+  background: #dcece5;
+  color: #28745d;
+}
+
+.letter-key:focus-visible,
+.guess-button:focus-visible {
+  outline: 3px solid #70aab7;
+  outline-offset: 2px;
+}
+
+.used-letters {
+  min-height: 1.1rem;
+  margin: 0.5rem 0 0;
+  color: #817c74;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.guess-form {
+  margin: 0;
+}
+
+.guess-row {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.guess-row input {
+  width: 0;
+  min-width: 0;
+  flex: 1 1 auto;
+  padding: 0.48rem 0.55rem;
+  border: 1px solid #d9d0c3;
+  border-radius: 0.45rem;
+  background: #fffdf9;
+  color: #302820;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.guess-row input:focus-visible {
+  outline: 3px solid #70aab7;
+  outline-offset: 2px;
+}
+
+.guess-button {
+  min-width: 4.4rem;
+  padding: 0.45rem 0.65rem;
+  border: 0;
+  border-radius: 0.45rem;
+  background: #337a8e;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.guess-button:not(:disabled):hover {
+  background: #245766;
+}
+
+.guess-button:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
+.hangman-game .new-game-button {
+  margin: 1.5rem auto 0;
+  background: #337a8e;
+  box-shadow: 0 3px 0 #245766;
+}
+
+.hangman-game .new-game-button:not(:disabled):hover {
+  background: #245766;
+}
+
+.hangman-game .new-game-button:focus-visible {
+  outline-color: #70aab7;
+}
+
+@media (max-width: 620px) {
+  .hangman-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hangman-drawing-panel {
+    min-height: 210px;
+  }
+
+  .hangman-drawing {
+    width: min(100%, 250px);
+    max-height: 240px;
+  }
+
+  .letter-keyboard {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}

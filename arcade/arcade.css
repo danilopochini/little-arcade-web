@@ -1,0 +1,681 @@
+:root {
+  color-scheme: dark;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #f8f1df;
+  background: #17182f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --paper: #f8f1df;
+  --muted: #aaa9bb;
+  --night: #17182f;
+  --yellow: #f3ca59;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgb(81 70 133 / 40%), transparent 60%),
+    radial-gradient(circle, rgb(255 255 255 / 16%) 1px, transparent 1.5px) 0 0 / 28px 28px,
+    var(--night);
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  width: min(100% - 2.5rem, 1080px);
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(255 255 255 / 11%);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  color: var(--paper);
+  font-size: 1.05rem;
+  font-weight: 1000;
+  letter-spacing: -0.045em;
+  text-decoration: none;
+}
+
+.wordmark-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid rgb(243 202 89 / 55%);
+  border-radius: 0.6rem;
+  background: #272745;
+  color: #f3ca59;
+}
+
+.wordmark-icon svg {
+  width: 1.5rem;
+}
+
+.wordmark-accent {
+  color: var(--yellow);
+}
+
+.topbar-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #b5b2c4;
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.online-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #79d7a2;
+  box-shadow: 0 0 10px rgb(121 215 162 / 65%);
+}
+
+.intro {
+  max-width: 690px;
+  margin: clamp(3rem, 8vw, 5.7rem) auto clamp(2.6rem, 6vw, 4.1rem);
+  text-align: center;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0;
+  color: var(--yellow);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.eyebrow-line {
+  width: 1.35rem;
+  height: 2px;
+  background: #f3ca59;
+}
+
+h1 {
+  margin: 1rem 0 0;
+  color: var(--paper);
+  font-size: clamp(2.7rem, 8vw, 5rem);
+  font-weight: 1000;
+  letter-spacing: -0.075em;
+  line-height: 0.99;
+}
+
+h1 span {
+  color: var(--yellow);
+}
+
+.intro-copy {
+  max-width: 390px;
+  margin: 1.1rem auto 0;
+  color: #b7b5c7;
+  font-size: clamp(0.87rem, 2vw, 1rem);
+  line-height: 1.65;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-kicker {
+  margin-bottom: 0.35rem;
+  color: #9997b1;
+  font-size: 0.58rem;
+}
+
+h2 {
+  margin: 0;
+  color: var(--paper);
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.game-card {
+  --accent: #f3ca59;
+  --accent-ink: #352b44;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 15.25rem;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 0.8rem;
+  background: #26263f;
+  box-shadow: 0 5px 0 rgb(6 7 18 / 38%);
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 9px 0 rgb(6 7 18 / 38%), 0 0 22px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.game-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.card-art {
+  position: relative;
+  display: grid;
+  height: 7.15rem;
+  flex: 0 0 auto;
+  place-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 125%, rgb(255 255 255 / 23%), transparent 65%),
+    var(--art-bg, #343250);
+}
+
+.card-art::before,
+.card-art::after {
+  position: absolute;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 50%;
+  content: "";
+}
+
+.card-art::before {
+  top: -1.3rem;
+  left: -1rem;
+}
+
+.card-art::after {
+  right: -1.1rem;
+  bottom: -1.4rem;
+}
+
+.card-info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.9rem 1rem 0.85rem;
+}
+
+.card-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: #aaa8bd;
+  font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 0.105em;
+}
+
+.type-dot {
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.card-title {
+  margin-top: 0.38rem;
+  color: #fff8e8;
+  font-size: 1.35rem;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.card-description {
+  margin-top: 0.35rem;
+  color: #b3b0c2;
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.card-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  color: var(--accent);
+  font-size: 0.58rem;
+  font-weight: 1000;
+  letter-spacing: 0.1em;
+}
+
+.card-link span {
+  font-size: 0.9rem;
+  transition: transform 160ms ease;
+}
+
+.game-card:hover .card-link span {
+  transform: translate(2px, -2px);
+}
+
+.card-number {
+  position: absolute;
+  top: 7.4rem;
+  right: 0.75rem;
+  color: rgb(255 255 255 / 23%);
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.card-chess {
+  --accent: #f2cc67;
+  --art-bg: #34304c;
+}
+
+.card-checkers {
+  --accent: #f08b6c;
+  --art-bg: #44304a;
+}
+
+.card-connect-four {
+  --accent: #6ec5ed;
+  --art-bg: #263e61;
+}
+
+.card-sudoku {
+  --accent: #84d5b2;
+  --art-bg: #294744;
+}
+
+.card-mastermind {
+  --accent: #d0a8ef;
+  --art-bg: #423252;
+}
+
+.card-hangman {
+  --accent: #f4a66e;
+  --art-bg: #473647;
+}
+
+.art-chess {
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 0 0.45rem;
+}
+
+.chess-piece {
+  position: relative;
+  z-index: 1;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 0.9;
+  text-shadow: 0 4px 0 rgb(0 0 0 / 19%);
+}
+
+.chess-knight {
+  grid-row: 1 / 3;
+  color: #f2cc67;
+  font-size: 4.8rem;
+  transform: translateY(-0.05rem);
+}
+
+.chess-pawn {
+  align-self: end;
+  color: #f9f0db;
+  font-size: 2.6rem;
+}
+
+.chess-square {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: rgb(241 215 148 / 28%);
+}
+
+.chess-square:last-child {
+  align-self: start;
+  background: rgb(160 126 78 / 55%);
+}
+
+.art-checkers {
+  grid-template-columns: repeat(3, 2.55rem);
+  grid-template-rows: repeat(2, 2.55rem);
+  gap: 0.25rem 0.8rem;
+  transform: rotate(-8deg);
+}
+
+.checker-disc {
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 3px solid rgb(255 255 255 / 75%);
+  border-radius: 50%;
+  box-shadow: inset 0 -4px 0 rgb(0 0 0 / 21%), 0 3px 0 rgb(0 0 0 / 22%);
+}
+
+.checker-red {
+  background: #e3645d;
+}
+
+.checker-cream {
+  background: #f8ebc9;
+}
+
+.checker-orange {
+  background: #e6a04a;
+}
+
+.checker-dark {
+  background: #292a43;
+}
+
+.checker-star {
+  position: absolute;
+  top: -0.5rem;
+  right: 0.2rem;
+  color: #ffdb6c;
+  font-size: 2rem;
+}
+
+.art-connect-four {
+  grid-template-columns: repeat(3, 2.1rem);
+  grid-template-rows: repeat(4, 1.15rem);
+  align-content: center;
+  gap: 0.12rem 0.48rem;
+  padding: 0.45rem 0.8rem;
+  border: 4px solid #7bc9ed;
+  border-radius: 0.7rem;
+  background: #2b69a0;
+  box-shadow: 0 4px 0 #1d4b77;
+}
+
+.connect-hole {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 2px solid rgb(15 43 75 / 48%);
+  border-radius: 50%;
+  background: #1d426a;
+  box-shadow: inset 0 3px 4px rgb(0 0 0 / 31%);
+}
+
+.hole-red {
+  background: #ef655f;
+  box-shadow: inset 0 -3px 0 #bb3f43, 0 2px 2px rgb(0 0 0 / 22%);
+}
+
+.hole-yellow {
+  background: #f4cd57;
+  box-shadow: inset 0 -3px 0 #ca963c, 0 2px 2px rgb(0 0 0 / 22%);
+}
+
+.art-sudoku {
+  grid-template-columns: repeat(3, 2.35rem);
+  grid-template-rows: repeat(3, 2.15rem);
+  gap: 1px;
+  padding: 0.2rem;
+  border: 3px solid #8acdb2;
+  border-radius: 0.35rem;
+  background: #e5f3d9;
+  box-shadow: 0 4px 0 rgb(0 0 0 / 16%);
+  color: #32695d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.art-sudoku span {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(62 105 91 / 24%);
+}
+
+.art-sudoku span:nth-child(2),
+.art-sudoku span:nth-child(4),
+.art-sudoku span:nth-child(6),
+.art-sudoku span:nth-child(7),
+.art-sudoku span:nth-child(9) {
+  color: #bf8e45;
+}
+
+.art-mastermind {
+  grid-template-columns: repeat(4, 2.3rem);
+  grid-template-rows: 2.3rem;
+  align-items: center;
+  gap: 0.45rem;
+  transform: rotate(-7deg);
+}
+
+.master-peg {
+  width: 2.05rem;
+  height: 2.05rem;
+  border: 3px solid rgb(255 255 255 / 74%);
+  border-radius: 50%;
+  box-shadow: inset 0 -4px 0 rgb(0 0 0 / 22%), 0 3px 0 rgb(0 0 0 / 2%);
+}
+
+.peg-coral {
+  background: #ee786c;
+}
+
+.peg-blue {
+  background: #64b9dc;
+}
+
+.peg-yellow {
+  background: #f2cb59;
+}
+
+.peg-green {
+  background: #77c58f;
+}
+
+.master-key {
+  position: absolute;
+  top: -0.85rem;
+  right: 0.25rem;
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border: 2px solid #f7e7c5;
+  border-radius: 50%;
+  background: #8063a2;
+  color: #fff6df;
+  font-size: 1rem;
+  font-weight: 900;
+  transform: rotate(7deg);
+}
+
+.art-hangman {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-hangman svg {
+  width: 8.6rem;
+  height: 6.5rem;
+  color: #eea069;
+}
+
+.hangman-letters {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.7rem;
+  color: #f4a66e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.19em;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2.7rem;
+  padding: 1.15rem 0 1.7rem;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #9997aa;
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-align: center;
+}
+
+.footer-sparkle {
+  color: var(--yellow);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .game-card {
+    min-height: 14.8rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .site-shell {
+    width: min(100% - 1.25rem, 380px);
+  }
+
+  .topbar {
+    min-height: 4.1rem;
+  }
+
+  .topbar-note {
+    font-size: 0.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  .intro {
+    margin: 2.65rem auto 2.3rem;
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 13vw, 3.55rem);
+  }
+
+  .section-heading {
+    margin-bottom: 0.75rem;
+  }
+
+  .game-grid {
+    gap: 0.55rem;
+  }
+
+  .game-card {
+    min-height: 13.4rem;
+  }
+
+  .card-art {
+    height: 6.1rem;
+  }
+
+  .card-info {
+    padding: 0.7rem 0.7rem 0.65rem;
+  }
+
+  .card-type {
+    gap: 0.25rem;
+    font-size: 0.44rem;
+    letter-spacing: 0.075em;
+  }
+
+  .card-title {
+    font-size: 1.16rem;
+  }
+
+  .card-description {
+    font-size: 0.67rem;
+  }
+
+  .card-link {
+    font-size: 0.49rem;
+  }
+
+  .card-number {
+    top: 6.3rem;
+    right: 0.55rem;
+  }
+
+  .art-connect-four {
+    grid-template-columns: repeat(3, 1.7rem);
+    grid-template-rows: repeat(4, 0.95rem);
+    gap: 0.08rem 0.34rem;
+  }
+
+  .connect-hole {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .art-sudoku {
+    grid-template-columns: repeat(3, 2rem);
+    grid-template-rows: repeat(3, 1.85rem);
+  }
+
+  .art-mastermind {
+    grid-template-columns: repeat(4, 1.8rem);
+    grid-template-rows: 1.8rem;
+    gap: 0.35rem;
+  }
+
+  .master-peg {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+
+  .site-footer {
+    gap: 0.45rem;
+    font-size: 0.48rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

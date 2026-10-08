@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e7dcc2">
+    <title>Ganzenbord</title>
+    <link rel="stylesheet" href="./ganzenbord.css">
+    <script defer src="./ganzenbord.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="masthead">
+        <div class="crest" aria-hidden="true">
+          <svg viewBox="0 0 80 72">
+            <path d="M13 58c0-8 10-12 20-8 4-4 3-10-3-13 5-1 8-5 8-12 6 3 9 8 8 14 10-1 17 4 21 11-9 8-24 11-39 5-7 5-12 5-15 3Z" fill="#fff4d0" stroke="#244e73" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="M39 42c7-5 14-4 19 1-4 1-8 4-11 8-4-1-7-4-8-9Z" fill="#e89a36" stroke="#244e73" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="45" cy="23" r="2.3" fill="#263d55"/>
+            <path d="m49 26 12 2-11 4M29 60l-3 5m9-4-2 5" fill="none" stroke="#c45a35" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="title-block">
+          <p class="overline">Gooi de dobbelstenen en volg de gans</p>
+          <h1>GANZENBORD</h1>
+          <p class="subtitle">Het klassieke Nederlandse bordspel</p>
+        </div>
+        <div class="edition-mark" aria-label="Voor twee tot vier spelers">2–4<br>SPELERS</div>
+      </header>
+
+      <section class="game-panel" aria-label="Ganzenbordspel">
+        <div class="game-toolbar">
+          <div class="status-paper" id="status-paper">
+            <span class="status-seal" aria-hidden="true">✦</span>
+            <p id="game-status" role="status" aria-live="polite">Gooi de dobbelstenen om te beginnen.</p>
+          </div>
+          <label class="player-picker" for="player-count">
+            Aantal spelers
+            <select id="player-count" aria-label="Aantal spelers">
+              <option value="2">2 spelers</option>
+              <option value="3">3 spelers</option>
+              <option value="4">4 spelers</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="board-mat">
+          <div class="board-caption" aria-hidden="true">
+            <span>VAN START TOT DE GROTE GANS</span>
+            <span>MET ELKE WORP EEN NIEUW AVONTUUR</span>
+          </div>
+          <div
+            class="goose-board"
+            id="goose-board"
+            role="grid"
+            aria-label="Het ganzenbord met 63 vakjes in een spiraal"
+          ></div>
+          <div class="board-colophon" aria-hidden="true">
+            <span>Volg de plaatjes; de gans wijst je de weg!</span>
+            <span>63 vakjes vol avontuur</span>
+          </div>
+        </div>
+
+        <div class="play-controls">
+          <div class="player-list" id="player-list" aria-label="Spelers"></div>
+          <div class="dice-and-buttons">
+            <div class="dice-tray" aria-label="De twee dobbelstenen">
+              <span class="die" id="die-one" aria-label="Eerste dobbelsteen">⚀</span>
+              <span class="die" id="die-two" aria-label="Tweede dobbelsteen">⚀</span>
+            </div>
+            <div class="button-stack">
+              <button id="roll-button" class="roll-button" type="button" disabled>
+                Gooi de dobbelstenen
+              </button>
+              <button id="new-game" class="new-game-button" type="button">
+                Nieuw spel
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <details class="rules-note">
+          <summary>De spelregels, voor wie ze nog eens wil lezen</summary>
+          <p>Gooi met twee dobbelstenen en verplaats je pion vooruit. Je moet met een exacte worp op 63 eindigen; gooi je te hoog, dan tel je vanaf 63 terug.</p>
+          <p>Op een gans vlieg je met dezelfde worp verder. De brug (6) brengt je naar 12; in de herberg (19) rust je twee beurten; in de put (31) wacht je tot iemand je plek inneemt; het doolhof (42) stuurt je terug naar 30; in de gevangenis (52) wacht je tot iemand je plek inneemt; de dood (58) stuurt je terug naar start.</p>
+          <p>Bij de allereerste worp van het spel brengt 6+3 je rechtstreeks naar 26; met 5+4 ga je rechtstreeks naar 53. Daarna gaat het spel verder met de volgende speler.</p>
+        </details>
+      </section>
+
+      <footer class="footer-note">Een ganzenbordspel naar oude Hollandse traditie</footer>
+    </main>
+  </body>
+</html>

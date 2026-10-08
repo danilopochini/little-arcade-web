@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import math
-import tkinter as tk
 from dataclasses import dataclass
 from typing import Optional
 
@@ -955,6 +954,9 @@ class CheckersGUI:
 
 
 def main():
+    global tk
+    import tkinter as tk
+
     root = tk.Tk()
     CheckersGUI(root)
     root.mainloop()

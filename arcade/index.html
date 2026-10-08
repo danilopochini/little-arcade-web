@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17182f">
+    <meta name="description" content="Pick a classic and play: chess, checkers, Connect Four, Sudoku, Mastermind, and Hangman.">
+    <title>Little Arcade — Classic browser games</title>
+    <link rel="stylesheet" href="./arcade.css">
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Little Arcade home">
+          <span class="wordmark-icon" aria-hidden="true">
+            <svg viewBox="0 0 36 36">
+              <path d="M7 12h22l3 16H4l3-16Z" fill="currentColor"/>
+              <path d="M12 19h5m-2.5-2.5v5m8-2.5h.1m4 3h.1" stroke="#17182f" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M12 9V5m6 4V4m6 5V5" stroke="#ffca55" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>little<span class="wordmark-accent">arcade</span></span>
+        </a>
+        <span class="topbar-note"><span class="online-dot"></span> READY WHEN YOU ARE</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE CLASSICS, ALL IN ONE PLACE</p>
+        <h1 id="page-title">Pick a game.<br><span>Make your move.</span></h1>
+        <p class="intro-copy">A little collection of games to think, tinker, and play. Choose your next favorite.</p>
+      </section>
+
+      <section class="games-section" aria-labelledby="games-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">THE GAME SHELF</p>
+            <h2 id="games-title">Choose your game</h2>
+          </div>
+        </div>
+
+        <div class="game-grid">
+          <a class="game-card card-chess" href="../chess.html?arcade=1">
+            <span class="card-art art-chess" aria-hidden="true">
+              <span class="chess-piece chess-knight">♞</span>
+              <span class="chess-piece chess-pawn">♟</span>
+              <span class="chess-square"></span>
+              <span class="chess-square"></span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">STRATEGY <span class="type-dot"></span> VS COMPUTER</span>
+              <span class="card-title">Chess</span>
+              <span class="card-description">Think ahead. Protect your king.</span>
+              <span class="card-link">PLAY CHESS <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">01</span>
+          </a>
+
+          <a class="game-card card-checkers" href="../checkers.html?arcade=1">
+            <span class="card-art art-checkers" aria-hidden="true">
+              <span class="checker-disc checker-red"></span>
+              <span class="checker-disc checker-cream"></span>
+              <span class="checker-disc checker-orange"></span>
+              <span class="checker-disc checker-dark"></span>
+              <span class="checker-star">✳</span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">STRATEGY <span class="type-dot"></span> VS COMPUTER</span>
+              <span class="card-title">Checkers</span>
+              <span class="card-description">Jump, capture, and crown a king.</span>
+              <span class="card-link">PLAY CHECKERS <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">02</span>
+          </a>
+
+          <a class="game-card card-connect-four" href="../index.html?arcade=1">
+            <span class="card-art art-connect-four" aria-hidden="true">
+              <span class="connect-hole"></span><span class="connect-hole hole-red"></span><span class="connect-hole"></span>
+              <span class="connect-hole hole-yellow"></span><span class="connect-hole hole-red"></span><span class="connect-hole"></span>
+              <span class="connect-hole hole-red"></span><span class="connect-hole hole-yellow"></span><span class="connect-hole"></span>
+              <span class="connect-hole hole-yellow"></span><span class="connect-hole hole-red"></span><span class="connect-hole hole-yellow"></span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">QUICK PLAY <span class="type-dot"></span> VS COMPUTER</span>
+              <span class="card-title">Connect Four</span>
+              <span class="card-description">Line up four before your rival does.</span>
+              <span class="card-link">PLAY CONNECT FOUR <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">03</span>
+          </a>
+
+          <a class="game-card card-sudoku" href="../sudoku.html?arcade=1">
+            <span class="card-art art-sudoku" aria-hidden="true">
+              <span>8</span><span>·</span><span>4</span><span>·</span><span>6</span><span>·</span><span>·</span><span>3</span><span>·</span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">PUZZLE <span class="type-dot"></span> SOLO</span>
+              <span class="card-title">Sudoku</span>
+              <span class="card-description">Fill the grid, one clue at a time.</span>
+              <span class="card-link">PLAY SUDOKU <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">04</span>
+          </a>
+
+          <a class="game-card card-mastermind" href="../mastermind.html?arcade=1">
+            <span class="card-art art-mastermind" aria-hidden="true">
+              <span class="master-peg peg-coral"></span>
+              <span class="master-peg peg-blue"></span>
+              <span class="master-peg peg-yellow"></span>
+              <span class="master-peg peg-green"></span>
+              <span class="master-key">?</span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">CODE BREAKING <span class="type-dot"></span> SOLO</span>
+              <span class="card-title">Mastermind</span>
+              <span class="card-description">Crack the colors. Find the code.</span>
+              <span class="card-link">PLAY MASTERMIND <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">05</span>
+          </a>
+
+          <a class="game-card card-hangman" href="../hangman.html?arcade=1">
+            <span class="card-art art-hangman" aria-hidden="true">
+              <svg viewBox="0 0 160 120">
+                <path d="M35 101h91M53 101V20h54v17" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="107" cy="48" r="13" fill="none" stroke="#f8efde" stroke-width="6"/>
+                <path d="M107 61v26m0-17L91 82m16-12 16 12m-16 5-14 18m14-18 14 18" fill="none" stroke="#f8efde" stroke-width="6" stroke-linecap="round"/>
+                <path d="M53 26h52" stroke="#f3ca59" stroke-width="4"/>
+              </svg>
+              <span class="hangman-letters">_ _ _ _ _</span>
+            </span>
+            <span class="card-info">
+              <span class="card-type">WORD GAME <span class="type-dot"></span> SOLO</span>
+              <span class="card-title">Hangman</span>
+              <span class="card-description">Guess the word before time runs out.</span>
+              <span class="card-link">PLAY HANGMAN <span aria-hidden="true">↗</span></span>
+            </span>
+            <span class="card-number" aria-hidden="true">06</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>MADE FOR ONE MORE ROUND</span>
+        <span class="footer-sparkle" aria-hidden="true">✳</span>
+        <span>CLASSICS NEVER GET OLD</span>
+      </footer>
+    </main>
+  </body>
+</html>

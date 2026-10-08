@@ -1,5 +1,4 @@
 import random
-import tkinter as tk
 
 
 CODE_LENGTH = 4
@@ -598,6 +597,9 @@ class MastermindApp:
 
 
 def main():
+    global tk
+    import tkinter as tk
+
     root = tk.Tk()
     app = MastermindApp(root)
     root.bind("<KeyPress>", app.on_key)

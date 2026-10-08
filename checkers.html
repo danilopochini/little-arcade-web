@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eee5d7">
+    <title>Checkers</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./checkers.css">
+    <script defer src="./checkers.js"></script>
+  </head>
+  <body>
+    <main class="game checkers-game">
+      <header class="page-header">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="brand-disc brand-disc-red"></span>
+          <span class="brand-disc brand-disc-yellow"></span>
+        </div>
+        <div>
+          <p class="eyebrow">A classic game of strategy</p>
+          <h1>Checkers</h1>
+        </div>
+      </header>
+
+      <section class="game-card" aria-label="Checkers game">
+        <div class="status-bar" id="status-bar" data-state="loading">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <p id="game-status" role="status" aria-live="polite">Loading game...</p>
+        </div>
+
+        <div class="players" aria-label="Players">
+          <div class="player-card" id="human-card">
+            <span class="player-disc disc-red" aria-hidden="true"></span>
+            <span class="player-details">
+              <span class="player-name">You</span>
+              <span class="player-color" id="human-count">Red · 12 pieces</span>
+            </span>
+          </div>
+          <div class="player-card" id="computer-card">
+            <span class="player-disc disc-black" aria-hidden="true"></span>
+            <span class="player-details">
+              <span class="player-name">Computer</span>
+              <span class="player-color" id="computer-count">Black · 12 pieces</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="checkers-board-frame">
+          <div
+            class="checkers-board"
+            id="game-board"
+            role="group"
+            aria-label="Checkers board, 8 rows by 8 columns"
+          ></div>
+        </div>
+
+        <p class="instructions">Red moves first. Captures are mandatory; finish every jump in a sequence.</p>
+        <button class="new-game-button" id="new-game" type="button" disabled>
+          New Game
+        </button>
+      </section>
+
+      <footer class="page-footer">You play red. The computer plays black.</footer>
+    </main>
+  </body>
+</html>
