@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e8e0d3">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mastermind.css">
+    <script defer src="./mastermind.js"></script>
+  </head>
+  <body>
+    <main class="game mastermind-game">
+      <header class="page-header">
+        <div class="mastermind-brand" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div>
+          <p class="eyebrow">Crack the secret code</p>
+          <h1>Mastermind</h1>
+        </div>
+      </header>
+
+      <section class="game-card" aria-label="Mastermind game">
+        <div class="status-bar" id="status-bar" data-state="loading">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <p id="game-status" role="status" aria-live="polite">Loading game...</p>
+          <span class="turn-counter" id="turn-counter" aria-live="polite"></span>
+        </div>
+
+        <div class="board-frame">
+          <div class="board-head" aria-hidden="true">
+            <span>GUESS PEGS</span>
+            <span>KEY PEGS</span>
+          </div>
+          <div
+            class="mastermind-board"
+            id="game-board"
+            role="group"
+            aria-label="Ten guesses, four color pegs per guess"
+          ></div>
+        </div>
+
+        <section class="palette-panel" aria-labelledby="palette-label">
+          <p class="panel-label" id="palette-label">Choose a color · repeats allowed</p>
+          <div class="palette" id="color-palette" role="group" aria-label="Color palette"></div>
+        </section>
+
+        <div class="actions">
+          <button class="game-action secondary-action" id="clear-guess" type="button" disabled>
+            Clear
+          </button>
+          <button class="game-action primary-action" id="submit-guess" type="button" disabled>
+            Submit Guess
+          </button>
+          <button class="game-action secondary-action new-game" id="new-game" type="button" disabled>
+            New Game
+          </button>
+        </div>
+
+        <div class="legend" aria-label="Feedback key">
+          <span><i class="feedback-dot is-exact" aria-hidden="true"></i>Right color &amp; place</span>
+          <span><i class="feedback-dot is-color-only" aria-hidden="true"></i>Right color, different place</span>
+        </div>
+      </section>
+
+      <footer class="page-footer">You have ten guesses. Feedback does not reveal which pegs match.</footer>
+    </main>
+  </body>
+</html>

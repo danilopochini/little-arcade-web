@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eee7dc">
+    <title>Chess</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./chess.css">
+    <script defer src="./chess.js"></script>
+  </head>
+  <body>
+    <main class="game chess-game">
+      <header class="page-header">
+        <div class="brand-mark chess-brand" aria-hidden="true">
+          <span class="chess-brand-black">♞</span>
+          <span class="chess-brand-white">♙</span>
+        </div>
+        <div>
+          <p class="eyebrow">A classic game of strategy</p>
+          <h1>Chess</h1>
+        </div>
+      </header>
+
+      <section class="game-card" aria-label="Chess game">
+        <div class="status-bar" id="status-bar" data-state="loading">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <p id="game-status" role="status" aria-live="polite">Loading game...</p>
+        </div>
+
+        <div class="players" aria-label="Players">
+          <div class="player-card" id="human-card">
+            <span class="player-disc chess-disc-white" aria-hidden="true">♙</span>
+            <span class="player-details">
+              <span class="player-name">You</span>
+              <span class="player-color" id="human-count">White · 16 pieces</span>
+            </span>
+          </div>
+          <div class="player-card" id="computer-card">
+            <span class="player-disc chess-disc-black" aria-hidden="true">♟</span>
+            <span class="player-details">
+              <span class="player-name">Computer</span>
+              <span class="player-color" id="computer-count">Black · 16 pieces</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="chess-board-frame">
+          <div
+            class="chess-board"
+            id="game-board"
+            role="group"
+            aria-label="Chess board, 8 rows by 8 columns"
+          ></div>
+        </div>
+
+        <label class="promotion-control" for="promotion-choice">
+          Pawn promotion
+          <select id="promotion-choice">
+            <option value="q">Queen</option>
+            <option value="r">Rook</option>
+            <option value="b">Bishop</option>
+            <option value="n">Knight</option>
+          </select>
+        </label>
+        <p class="instructions">White moves first. Select a piece, then a highlighted destination.</p>
+        <button class="new-game-button" id="new-game" type="button" disabled>
+          New Game
+        </button>
+      </section>
+
+      <footer class="page-footer">You play white. The computer plays black.</footer>
+    </main>
+  </body>
+</html>

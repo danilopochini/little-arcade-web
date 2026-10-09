@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3efe7">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="./sudoku.css">
+    <script defer src="./sudoku.js"></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="page-header">
+        <div class="brand-mark" aria-hidden="true">9</div>
+        <div>
+          <p class="eyebrow">A classic number puzzle</p>
+          <h1>Sudoku</h1>
+        </div>
+      </header>
+
+      <section class="game-card" aria-label="Sudoku game">
+        <div class="status-bar" id="status-bar" data-state="loading">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <p id="game-status" role="status" aria-live="polite">Loading Sudoku...</p>
+        </div>
+
+        <div class="toolbar">
+          <label class="difficulty-control" for="difficulty">
+            <span>Difficulty</span>
+            <select id="difficulty" disabled>
+              <option>Easy</option>
+              <option>Medium</option>
+              <option>Hard</option>
+            </select>
+          </label>
+          <button class="action-button action-primary" id="new-game" type="button" disabled>
+            New Game
+          </button>
+        </div>
+
+        <div class="board-wrap">
+          <div
+            class="sudoku-board"
+            id="sudoku-board"
+            role="grid"
+            aria-label="Sudoku puzzle, 9 rows by 9 columns"
+          ></div>
+        </div>
+
+        <div class="game-actions">
+          <button class="action-button" id="erase" type="button" disabled>Erase</button>
+          <button
+            class="action-button"
+            id="notes"
+            type="button"
+            aria-pressed="false"
+            disabled
+          >Notes: Off</button>
+          <button class="action-button action-check" id="check" type="button" disabled>
+            Check
+          </button>
+        </div>
+
+        <div class="number-pad" id="number-pad" aria-label="Number pad"></div>
+        <p class="instructions">Select a cell, then choose a number. Use N for notes and arrow keys to move.</p>
+      </section>
+
+      <footer class="page-footer">A little focus, one square at a time.</footer>
+    </main>
+  </body>
+</html>

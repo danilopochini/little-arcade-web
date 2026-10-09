@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eee7dc">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./hangman.css">
+    <script defer src="./hangman.js?v=2"></script>
+  </head>
+  <body>
+    <main class="game hangman-game">
+      <header class="page-header">
+        <div class="hangman-brand" aria-hidden="true">?</div>
+        <div>
+          <p class="eyebrow">Guess the hidden word</p>
+          <h1>Hangman</h1>
+        </div>
+      </header>
+
+      <section class="game-card" aria-label="Hangman game">
+        <div class="status-bar" id="status-bar" data-state="loading">
+          <span class="status-indicator" aria-hidden="true"></span>
+          <p id="game-status" role="status" aria-live="polite">Loading game...</p>
+        </div>
+
+        <div class="hangman-layout">
+          <div class="hangman-drawing-panel">
+            <svg
+              class="hangman-drawing"
+              id="hangman-drawing"
+              viewBox="0 0 320 300"
+              role="img"
+              aria-label="Hangman drawing, 0 of 10 incorrect guesses"
+            >
+              <g class="gallows">
+                <path d="M34 270h190M78 270V34h122v30" />
+              </g>
+              <g class="hangman-person" id="hangman-person">
+                <circle class="person-part" data-part="1" cx="200" cy="88" r="24" />
+                <path class="person-part" data-part="2" d="M200 112v66" />
+                <path class="person-part" data-part="3" d="m200 130-34 31" />
+                <path class="person-part" data-part="4" d="m200 130 34 31" />
+                <path class="person-part" data-part="5" d="m200 178-32 46" />
+                <path class="person-part" data-part="6" d="m200 178 32 46" />
+                <circle class="person-part face-part" data-part="7" cx="191" cy="83" r="2" />
+                <circle class="person-part face-part" data-part="8" cx="209" cy="83" r="2" />
+                <path class="person-part face-part" data-part="9" d="M190 99h20" />
+                <path class="person-part face-part" data-part="10" d="m200 87-5 7h5" />
+              </g>
+            </svg>
+            <p class="mistakes-count" id="mistakes-count">Incorrect guesses: 0/10</p>
+          </div>
+
+          <div class="hangman-controls">
+            <div class="word-panel">
+              <p class="panel-label">Hidden word</p>
+              <p class="word-display" id="word-display" aria-label="Hidden word"></p>
+            </div>
+
+            <div class="guess-panel">
+              <p class="panel-label">Choose a letter</p>
+              <div class="letter-keyboard" id="letter-keyboard" aria-label="Letter guesses"></div>
+              <p class="used-letters" id="used-letters">No letters guessed yet</p>
+            </div>
+
+            <form class="guess-form" id="guess-form">
+              <label class="panel-label" for="guess-input">Or enter a letter (type QUIT to reveal)</label>
+              <div class="guess-row">
+                <input
+                  id="guess-input"
+                  name="guess"
+                  type="text"
+                  maxlength="32"
+                  autocomplete="off"
+                  autocapitalize="characters"
+                  aria-label="Enter a letter or QUIT"
+                >
+                <button class="guess-button" id="guess-button" type="submit">Guess</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <button class="new-game-button" id="new-game" type="button" disabled>
+          New Game
+        </button>
+      </section>
+
+      <footer class="page-footer">Guess the word before the drawing is complete.</footer>
+    </main>
+  </body>
+</html>

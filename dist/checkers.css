@@ -1,0 +1,170 @@
+.checkers-game {
+  width: min(100%, 680px);
+}
+
+.checkers-game .brand-disc-yellow {
+  background: #24232b;
+}
+
+.checkers-game .disc-black {
+  background: #24232b;
+}
+
+.checkers-game .status-bar[data-state="human"] .status-indicator {
+  background: #c9363d;
+}
+
+.checkers-game .status-bar[data-state="computer"] .status-indicator {
+  background: #24232b;
+}
+
+.checkers-game .player-card.is-active {
+  border-color: #d8b993;
+  background: #f5eee4;
+}
+
+.checkers-board-frame {
+  width: min(100%, 560px);
+  margin: 1rem auto 0;
+  padding: clamp(0.45rem, 2vw, 0.8rem);
+  border: 1px solid #a67853;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, #9e6d48, #805536);
+  box-shadow: 0 7px 0 #5d402d, 0 12px 18px rgb(43 49 60 / 15%);
+}
+
+.checkers-board {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid #5b3929;
+  border-radius: 0.35rem;
+  background: #e8d4b3;
+  box-shadow: inset 0 2px 6px rgb(36 24 16 / 18%);
+}
+
+.checkers-square {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkers-square.is-light {
+  background: #e8d4b3;
+}
+
+.checkers-square.is-dark {
+  background: #65402e;
+  cursor: pointer;
+}
+
+.checkers-square:disabled {
+  cursor: default;
+}
+
+.checkers-square.is-last-move::before,
+.checkers-square.is-selected::before,
+.checkers-square.is-destination::before {
+  position: absolute;
+  inset: 3%;
+  border: 2px solid transparent;
+  content: "";
+  pointer-events: none;
+}
+
+.checkers-square.is-last-move::before {
+  border-color: rgb(255 240 168 / 82%);
+}
+
+.checkers-square.is-selected::before {
+  border-color: #63e0bb;
+  box-shadow: inset 0 0 0 2px rgb(99 224 187 / 24%);
+}
+
+.checkers-square.is-destination::before {
+  inset: 34%;
+  border: 0;
+  border-radius: 50%;
+  background: #f4cf63;
+  box-shadow: 0 1px 4px rgb(24 19 14 / 45%);
+}
+
+.checkers-square.is-capture.is-destination::before {
+  inset: 12%;
+  border: 3px solid #f4cf63;
+  background: transparent;
+  box-shadow: none;
+}
+
+.checkers-square:focus-visible {
+  z-index: 1;
+  outline: 3px solid #63e0bb;
+  outline-offset: -4px;
+}
+
+.checker-piece {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 78%;
+  height: 78%;
+  place-items: center;
+  border: 2px solid #a32f3b;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 27%, #ff8c83 0, #ed5b5b 27%, #c9363d 72%);
+  box-shadow:
+    inset 0 2px 3px rgb(255 255 255 / 34%),
+    0 3px 3px rgb(16 14 12 / 44%);
+  transition: transform 130ms ease;
+}
+
+.checker-piece.is-black {
+  border-color: #17161b;
+  background: radial-gradient(circle at 35% 27%, #77727c 0, #45424a 28%, #24232b 74%);
+}
+
+.checker-piece.is-king::after {
+  width: 42%;
+  height: 32%;
+  border: 1px solid #9e7130;
+  background: #f7d777;
+  clip-path: polygon(0 0, 24% 48%, 38% 12%, 50% 48%, 68% 12%, 78% 48%, 100% 0, 88% 100%, 12% 100%);
+  content: "";
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 34%));
+}
+
+.checkers-square:not(:disabled):hover .checker-piece {
+  transform: scale(1.05);
+}
+
+.checkers-game .new-game-button {
+  background: #805536;
+  box-shadow: 0 3px 0 #5d402d;
+}
+
+.checkers-game .new-game-button:not(:disabled):hover {
+  background: #70482f;
+}
+
+.checkers-game .new-game-button:focus-visible {
+  outline-color: #b47c50;
+}
+
+@media (max-width: 420px) {
+  .checkers-board-frame {
+    padding: 0.4rem;
+  }
+
+  .checkers-square.is-selected::before,
+  .checkers-square.is-last-move::before {
+    border-width: 1px;
+  }
+}
