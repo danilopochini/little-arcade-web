@@ -9,7 +9,7 @@ python -m pip install -r hangman-requirements.txt
 python arcade_server.py
 ```
 
-The server opens the homepage in Chrome. Keep the terminal window open while playing, and press **Ctrl+C** there to stop it. Chess, Checkers, Connect Four, and Sudoku load their Python game logic in the browser using Pyodide, so those games need an internet connection on first load. Mastermind and Hangman use the local arcade server for game actions.
+The server opens the homepage in Chrome. Keep the terminal window open while playing, and press **Ctrl+C** there to stop it. Chess, Checkers, Connect Four, and Sudoku load their Python game logic in the browser using Pyodide, so those games need an internet connection on first load. Mastermind and Hangman run their game actions in browser-side JavaScript.
 
 # Hangman game
 
@@ -131,7 +131,7 @@ Run the browser version from this folder with:
 python mastermind_browser.py
 ```
 
-The script starts a local web server and opens Mastermind in Google Chrome. Keep the terminal window open while playing; press **Ctrl+C** there to stop the server. The browser version uses the same Python code-breaking rules as the desktop game and does not require an internet connection.
+The script serves the page and opens Mastermind in Google Chrome. Keep the terminal window open while playing; press **Ctrl+C** there to stop the server. Gameplay runs entirely in browser-side JavaScript, so it does not require a game API or an internet connection.
 
 ## Mens erger je niet (browser)
 
