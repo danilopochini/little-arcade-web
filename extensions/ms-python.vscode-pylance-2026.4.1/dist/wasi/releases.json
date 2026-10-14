@@ -82,5 +82,6 @@
   "v3.11.3": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.11.3/python-3.11.3-wasi_sdk-16.zip",
   "v3.12.0a7": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.12.0a7/python-3.12.0a7-wasi_sdk-20.zip",
   "v3.12.0a6": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.12.0a6/python-3.12.0a6-wasi_sdk-19.zip",
-  "v3.11.2": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.11.2/python-3.11.2-wasi_sdk-16.zip"
+  "v3.11.2": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.11.2/python-3.11.2-wasi_sdk-16.zip",
+  "v3.15.0": "https://github.com/brettcannon/cpython-wasi-build/releases/download/v3.15.0/python-3.15.0-wasi_sdk-33.zip"
 }

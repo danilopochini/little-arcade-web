@@ -1,0 +1,10 @@
+{
+  "version": "1.38.0",
+  "tag": "v1.38.0",
+  "package_file": "test-companion-1.38.0.vsix",
+  "commit_hash": "faa5764f832ac1a3fb02b5c1ae72b64f50ecca9d",
+  "build_time": "2026-10-12T14:06:43Z",
+  "branch": "production-release",
+  "channel": "releases",
+  "workflow_run": "1066"
+}
