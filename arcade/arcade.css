@@ -288,16 +288,6 @@ h2 {
   transform: translate(2px, -2px);
 }
 
-.card-number {
-  position: absolute;
-  top: 7.4rem;
-  right: 0.75rem;
-  color: rgb(255 255 255 / 23%);
-  font-size: 0.6rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-}
-
 .card-chess {
   --accent: #f2cc67;
   --art-bg: #34304c;
@@ -629,11 +619,6 @@ h2 {
 
   .card-link {
     font-size: 0.49rem;
-  }
-
-  .card-number {
-    top: 6.3rem;
-    right: 0.55rem;
   }
 
   .art-connect-four {
