@@ -1,1 +1,15 @@
+# BrowserStack Test Companion
 extensions/
+
+# Test output
+test-results/
+
+# UI test files
+ui-tests/
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
