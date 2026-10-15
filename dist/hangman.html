@@ -7,7 +7,7 @@
     <title>Hangman</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./hangman.css">
-    <script defer src="./hangman.js?v=2"></script>
+    <script defer src="./hangman.js?v=3"></script>
   </head>
   <body>
     <main class="game hangman-game">
@@ -23,6 +23,14 @@
         <div class="status-bar" id="status-bar" data-state="loading">
           <span class="status-indicator" aria-hidden="true"></span>
           <p id="game-status" role="status" aria-live="polite">Loading game...</p>
+        </div>
+
+        <div class="language-picker">
+          <label class="panel-label" for="language-select">Word language</label>
+          <select id="language-select" name="language">
+            <option value="en" selected>English</option>
+            <option value="nl">Dutch</option>
+          </select>
         </div>
 
         <div class="hangman-layout">

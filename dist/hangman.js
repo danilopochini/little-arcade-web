@@ -117,6 +117,9 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
   const guessButton = document.querySelector("#guess-button");
   const newGameButton = document.querySelector("#new-game");
 
+  const languageSelect = document.querySelector("#language-select");
+  const WORD_FILES = { en: "./hangman_words.json", nl: "./hangman_words_nl.json" };
+  const wordCache = {};
   let words = [];
   let gameState = null;
   let loadingWords = false;
@@ -209,7 +212,12 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
   }
 
   async function loadWordList() {
-    const response = await fetch("./hangman_words.json");
+    const language = languageSelect.value;
+    if (wordCache[language]) {
+      words = wordCache[language];
+      return;
+    }
+    const response = await fetch(WORD_FILES[language] || WORD_FILES.en);
     if (!response.ok) {
       throw new Error(`The word list returned HTTP ${response.status}.`);
     }
@@ -217,6 +225,7 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
     if (!validateWordList(candidate)) {
       throw new Error("The word list is invalid.");
     }
+    wordCache[language] = candidate;
     words = candidate;
   }
 
@@ -224,7 +233,8 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
     if (loadingWords) {
       return;
     }
-    if (words.length) {
+    if (wordCache[languageSelect.value]) {
+      words = wordCache[languageSelect.value];
       gameState = createGameState(chooseWord(words));
       requestError = "";
       guessInput.value = "";
@@ -233,6 +243,7 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
     }
 
     loadingWords = true;
+    languageSelect.disabled = true;
     requestError = "";
     render();
     try {
@@ -243,9 +254,12 @@ if (typeof document !== "undefined" && typeof window !== "undefined") {
       requestError = `Unable to load Hangman words: ${error instanceof Error ? error.message : String(error)}`;
     } finally {
       loadingWords = false;
+      languageSelect.disabled = false;
       render();
     }
   }
+
+  languageSelect.addEventListener("change", () => void startNewGame());
 
   guessForm.addEventListener("submit", (event) => {
     event.preventDefault();
